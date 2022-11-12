@@ -1,0 +1,7 @@
+metodos colocar código ao inves de palavra
+Exemplo:
+public void setCabeca(){
+	//codigo do metodo
+}
+
+
