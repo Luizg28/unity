@@ -28,21 +28,43 @@ public class DefinirParte : MonoBehaviour
     public GameObject drop3;
     public GameObject testar;
     public int conte;
+
+    public RoboController robo;
     
     void Start()
     {
-        
+        robo = new RoboController();
     }
 
     // Update is called once per frame
     void Update()
     {
-        conte = drop.GetComponent<Drop>().cont + drop2.GetComponent<Drop2>().cont + drop3.GetComponent<Drop3>().cont;
+        conte = drop.GetComponent<Drop>().cont + drop2.GetComponent<Drop>().cont + drop3.GetComponent<Drop>().cont;
         cont = conte;
+    }
+
+    private void verificaComponente(string componentName){
+        switch(componentName){
+            case "cabeca":
+                robo.cabeca = true;
+                break;
+            case "corpo":
+                robo.corpo = true;
+                break;
+            case "pe":
+                robo.pe = true;
+                break;
+        }
     }
 
     public void NewImage()
     {
+        verificaComponente(drop.GetComponent<Drop>().componentName);
+        verificaComponente(drop2.GetComponent<Drop>().componentName);
+        verificaComponente(drop3.GetComponent<Drop>().componentName);
+
+        Debug.Log(robo.toString());
+
         testar.SetActive(true);
         switch (cont)
         {

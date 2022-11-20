@@ -11,6 +11,7 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
 
     public int valor;
+    public string componentName;
 
     private void Awake() 
     {

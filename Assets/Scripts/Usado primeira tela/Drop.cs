@@ -8,10 +8,13 @@ public class Drop : MonoBehaviour, IDropHandler
     public GameObject caminhar;
     public GameObject levantar;
     public int cont;
+    public string componentName;
     
     public void OnDrop(PointerEventData eventData)
     {
         cont = eventData.pointerDrag.GetComponent<Dragdrop>().valor;
+        componentName = eventData.pointerDrag.GetComponent<Dragdrop>().componentName;
+        
         switch (cont)
         {
         case 2:
