@@ -6,28 +6,20 @@ using UnityEngine.UI;
 
 public class DefinirParte : MonoBehaviour
 {
-    public Image caboriginal;
-    public Sprite cabnewSprite1;
-    public Sprite cabnewSprite2;
-    public Sprite cabnewSprite3;
-    public Sprite cabnewSprite4;
-    public Image tororiginal;
-    public Sprite tornewSprite1;
-    public Sprite tornewSprite2;
-    public Sprite tornewSprite3;
-    public Sprite tornewSprite4;
-    public Image peoriginal;
-    public Sprite penewSprite1;
-    public Sprite penewSprite2;
-    public Sprite penewSprite3;
-    public Sprite penewSprite4;
-    public int cont;
+    public Image cabecaOriginal;
+    public Sprite novaCabeca;
+    public Image corpoOriginal;
+    public Sprite novoCorpo;
+    public Image peOriginal;
+    public Sprite novoPe;
 
-    public GameObject drop;
-    public GameObject drop2;
-    public GameObject drop3;
-    public GameObject testar;
-    public int conte;
+    public GameObject caixaCod1;
+    public GameObject caixaCod2;
+    public GameObject caixaCod3;
+    public GameObject caixaCod4;
+    public GameObject caixaCod5;
+    public GameObject caixaCod6;
+    public GameObject caixaCod7;
 
     public RoboController robo;
     
@@ -39,34 +31,48 @@ public class DefinirParte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        conte = drop.GetComponent<Drop>().cont + drop2.GetComponent<Drop>().cont + drop3.GetComponent<Drop>().cont;
-        cont = conte;
+
     }
 
     private void verificaComponente(string componentName){
         switch(componentName){
             case "cabeca":
                 robo.cabeca = true;
+                cabecaOriginal.sprite = novaCabeca;
                 break;
             case "corpo":
                 robo.corpo = true;
+                corpoOriginal.sprite = novoCorpo;
                 break;
             case "pe":
                 robo.pe = true;
+                peOriginal.sprite = novoPe;
+                break;
+            case "andar":
+                robo.andar = true;
+                break;
+            case "levantar":
+                robo.levantar = true;
+                break;
+            case "pular":
+                robo.pular = true;
+                break;
+            default:
                 break;
         }
     }
 
-    public void NewImage()
+    public void NewRobo()
     {
-        verificaComponente(drop.GetComponent<Drop>().componentName);
-        verificaComponente(drop2.GetComponent<Drop>().componentName);
-        verificaComponente(drop3.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod1.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod2.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod3.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod4.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod5.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod6.GetComponent<Drop>().componentName);
+        verificaComponente(caixaCod7.GetComponent<Drop>().componentName);
 
-        Debug.Log(robo.toString());
-
-        testar.SetActive(true);
-        switch (cont)
+        /*switch (cont)
         {
         case 1:
             System.Random rnd1 = new System.Random();
@@ -367,6 +373,6 @@ public class DefinirParte : MonoBehaviour
 
         default:
         break;
-        }
+        }*/
     }
 }

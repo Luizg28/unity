@@ -12,6 +12,7 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public int valor;
     public string componentName;
+    public GameObject parente;
 
     private void Awake() 
     {
@@ -21,6 +22,7 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        this.transform.parent = parente.transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

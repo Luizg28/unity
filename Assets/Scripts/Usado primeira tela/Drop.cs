@@ -1,37 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Drop : MonoBehaviour, IDropHandler
 {
-    public GameObject caminhar;
-    public GameObject levantar;
-    public int cont;
+    public GameObject codCabeca;
+    public GameObject codCorpo;
+    public GameObject codPe;
+    public GameObject codPular;
+    public GameObject codLevantar;
+    public GameObject codAndar;
+    public GameObject parente;
     public string componentName;
     
     public void OnDrop(PointerEventData eventData)
     {
-        cont = eventData.pointerDrag.GetComponent<Dragdrop>().valor;
-        componentName = eventData.pointerDrag.GetComponent<Dragdrop>().componentName;
         
-        switch (cont)
+        float x = this.transform.position.x;
+        float y = this.transform.position.y;
+        float z = this.transform.position.z;
+        componentName = eventData.pointerDrag.GetComponent<Dragdrop>().componentName;
+        switch (componentName)
         {
-        case 2:
-            levantar.SetActive(true);
-        break;
-
-        case 4:
-            caminhar.SetActive(true);
-        break;
-
-        default:
-        break;
-        }
-
-        if(eventData.pointerDrag != null)
-        {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            case "cabeca":
+                codCabeca.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codCabeca.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "corpo":
+                codCorpo.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codCorpo.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "pe":
+                codPe.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codPe.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "andar":
+                codAndar.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codAndar.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "levantar":
+                codLevantar.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codLevantar.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "pular":
+                codPular.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codPular.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            default:
+                break;
         }
     }
 }
