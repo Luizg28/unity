@@ -21,41 +21,35 @@ public class DefinirParte : MonoBehaviour
     public GameObject caixaCod6;
     public GameObject caixaCod7;
 
-    public RoboController robo;
+    //public RoboController robo;
     
     void Start()
     {
-        robo = new RoboController();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        //robo = new RoboController();
     }
 
     private void verificaComponente(string componentName){
         switch(componentName){
             case "cabeca":
-                robo.cabeca = true;
+                RoboController.cabeca = true;
                 cabecaOriginal.sprite = novaCabeca;
                 break;
             case "corpo":
-                robo.corpo = true;
+                RoboController.corpo = true;
                 corpoOriginal.sprite = novoCorpo;
                 break;
             case "pe":
-                robo.pe = true;
+                RoboController.pe = true;
                 peOriginal.sprite = novoPe;
                 break;
             case "andar":
-                robo.andar = true;
+                RoboController.andar = true;
                 break;
             case "levantar":
-                robo.levantar = true;
+                RoboController.levantar = true;
                 break;
             case "pular":
-                robo.pular = true;
+                RoboController.pular = true;
                 break;
             default:
                 break;

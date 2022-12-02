@@ -1,15 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    public GameObject botaoPulo;
+    public GameObject botaoAndar;
+    public GameObject botaoLevantarBraco;
+    //public GameObject botaoPuloDuplo;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+    public Sprite newSprite2;
+
     private bool moveLeft;
     private bool moveRight;
     private bool moveJump;
     private bool moveDoubleJump;
+    private bool moveLevantar;
 
     public bool isJumping;
     public bool doubleJump;
@@ -22,9 +33,52 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         moveLeft = false;
         moveRight = false;
+
+        
+        if (RoboController.andar && RoboController.pular && RoboController.levantar)
+        {
+            botaoAndar.SetActive(true);
+            botaoPulo.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.pular && RoboController.levantar)
+        {
+            botaoPulo.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.pular && RoboController.andar)
+        {
+            botaoPulo.SetActive(true);
+            botaoAndar.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.andar)
+        {
+            botaoLevantarBraco.SetActive(true);
+            botaoAndar.SetActive(true);
+        }
+
+        else if(RoboController.levantar)
+        {
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.pular)
+        {
+            botaoPulo.SetActive(true);
+        }
+
+        else if(RoboController.andar)
+        {
+            botaoAndar.SetActive(true);
+        }
+        
     }
 
     public void PointerDownLeft()
@@ -57,6 +111,17 @@ public class Player : MonoBehaviour
         moveJump = false;
     }
 
+    public void PointerDownLeva()
+    {
+        moveLevantar = true;
+    }
+
+    public void PointerUpLeva()
+    {
+        moveLevantar = false;
+        this.spriteRenderer.sprite = newSprite;
+    }
+
     void Update()
     {
         MovementPlayer();
@@ -64,7 +129,6 @@ public class Player : MonoBehaviour
 
     private void MovementPlayer()
     {
-        //If i press the left button
         if (moveLeft)
         {
             horizontalMove = -speed;
@@ -92,6 +156,11 @@ public class Player : MonoBehaviour
                     doubleJump = false;
                 }
             }
+        }
+
+        else if(moveLevantar)
+        {
+            spriteRenderer.sprite = newSprite;
         }
 
         else

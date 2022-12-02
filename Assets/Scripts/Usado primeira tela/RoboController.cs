@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class RoboController
 {
-    public bool cabeca;
-    public bool corpo;
-    public bool pe;
-    public bool andar;
-    public bool levantar;
-    public bool pular;
+    public static bool cabeca;
+    public static bool corpo;
+    public static bool pe;
+    public static bool andar;
+    public static bool levantar;
+    public static bool pular;
 
     public void reset(){
-        this.cabeca = false;
-        this.corpo = false;
-        this.pe = false;
-        this.andar = false;
-        this.levantar = false;
-        this.pular = false;
+        RoboController.cabeca = false;
+        RoboController.corpo = false;
+        RoboController.pe = false;
+        RoboController.andar = false;
+        RoboController.levantar = false;
+        RoboController.pular = false;
     }
-
-    public string toString(){
-        return "Cabeça: " + this.cabeca + "\nCorpo: " + this.corpo + "\nPé: " + this.pe;
-    }
-    
 }
