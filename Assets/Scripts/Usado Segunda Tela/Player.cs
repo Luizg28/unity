@@ -3,69 +3,107 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{   
-    public float Speed;
-    public float JumpForce;
+{
+    private Rigidbody2D rb;
+
+    private bool moveLeft;
+    private bool moveRight;
+    private bool moveJump;
+    private bool moveDoubleJump;
 
     public bool isJumping;
-    public bool doubleJumping;
+    public bool doubleJump;
 
-    private Rigidbody2D rig;
-    private Animator anim;
+    private float horizontalMove;
 
-    // Start is called before the first frame update
+    public float jumpForce;
+    public float speed = 5;
+
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+        moveLeft = false;
+        moveRight = false;
     }
 
-    // Update is called once per frame
+    public void PointerDownLeft()
+    {
+        moveLeft = true;
+    }
+
+    public void PointerUpLeft()
+    {
+        moveLeft = false;
+    }
+
+    public void PointerDownRight()
+    {
+        moveRight = true;
+    }
+
+    public void PointerUpRight()
+    {
+        moveRight = false;
+    }
+
+    public void PointerDownJump()
+    {
+        moveJump = true;
+    }
+
+    public void PointerUpJump()
+    {
+        moveJump = false;
+    }
+
     void Update()
     {
-        Move();
-        Jump();
+        MovementPlayer();
     }
 
-    void Move()
+    private void MovementPlayer()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * Speed;
-        if(Input.GetAxis("Horizontal") > 0f)
+        //If i press the left button
+        if (moveLeft)
         {
-            anim.SetBool("Run", true);
-            transform.eulerAngles = new Vector3(0f,0f,0f);
+            horizontalMove = -speed;
         }
-        if(Input.GetAxis("Horizontal") < 0f)
-        {
-            anim.SetBool("Run", true);
-            transform.eulerAngles = new Vector3(0f,180f,0f);
-        }
-        if(Input.GetAxis("Horizontal") == 0f)
-        {
-            anim.SetBool("Run", false);
-        }
-    }
 
-    void Jump()
-    {
-        if(Input.GetButtonDown("Jump"))
+        else if (moveRight)
+        {
+            horizontalMove = speed;
+        }
+
+        else if (moveJump)
         {
             if(!isJumping)
             {
-                rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
-                doubleJumping = true;
-                anim.SetBool("Jump", true);
-            }else
+                jumpForce = 1;
+                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                doubleJump = true;
+            }
+            else
             {
-                if(doubleJumping)
+                if(doubleJump)
                 {
-                    rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
-                    doubleJumping = false;
+                    jumpForce = 1;
+                    rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                    doubleJump = false;
                 }
             }
-            
         }
+
+        else
+        {
+            horizontalMove = 0;
+            jumpForce = 0;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -73,7 +111,6 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == 8)
         {
             isJumping = false;
-            anim.SetBool("Jump", false);
         }
     }
 
