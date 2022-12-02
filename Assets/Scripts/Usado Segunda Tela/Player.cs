@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
     //public GameObject botaoPuloDuplo;
 
     public SpriteRenderer spriteRenderer;
-    public Sprite newSprite;
-    public Sprite newSprite2;
+    public Sprite levantaBraco;
+    public Sprite abaixaBraco;
 
     private bool moveLeft;
     private bool moveRight;
@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         moveLeft = false;
         moveRight = false;
 
-        
         if (RoboController.andar && RoboController.pular && RoboController.levantar)
         {
             botaoAndar.SetActive(true);
@@ -119,7 +118,7 @@ public class Player : MonoBehaviour
     public void PointerUpLeva()
     {
         moveLevantar = false;
-        this.spriteRenderer.sprite = newSprite;
+        spriteRenderer.sprite = abaixaBraco;
     }
 
     void Update()
@@ -160,7 +159,7 @@ public class Player : MonoBehaviour
 
         else if(moveLevantar)
         {
-            spriteRenderer.sprite = newSprite;
+            spriteRenderer.sprite = levantaBraco;
         }
 
         else
