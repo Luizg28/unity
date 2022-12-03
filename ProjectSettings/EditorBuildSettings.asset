@@ -10,5 +10,8 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/SegundaTela.unity
-    guid: f4421336722fbe44a971e806a0171ab9
+    guid: 91ee04a57ce31f847bf9ad87533484e6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

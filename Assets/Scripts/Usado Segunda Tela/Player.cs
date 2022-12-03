@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject botaoPulo;
-    public GameObject botaoAndar;
+    public GameObject botaoAndarDireita;
+    public GameObject botaoAndarEsquerda;
     public GameObject botaoLevantarBraco;
     //public GameObject botaoPuloDuplo;
 
@@ -38,29 +39,82 @@ public class Player : MonoBehaviour
         moveLeft = false;
         moveRight = false;
 
-        if (RoboController.andar && RoboController.pular && RoboController.levantar)
+        if (RoboController.andarDireita && RoboController.andarEsquerda && RoboController.pular && RoboController.levantar)
         {
-            botaoAndar.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+            botaoAndarEsquerda.SetActive(true);
             botaoPulo.SetActive(true);
             botaoLevantarBraco.SetActive(true);
         }
 
-        else if(RoboController.pular && RoboController.levantar)
+        else if(RoboController.pular && RoboController.levantar && RoboController.andarDireita)
         {
+            botaoAndarDireita.SetActive(true);
             botaoPulo.SetActive(true);
             botaoLevantarBraco.SetActive(true);
         }
 
-        else if(RoboController.pular && RoboController.andar)
+        else if(RoboController.pular && RoboController.levantar && RoboController.andarEsquerda)
         {
+            botaoAndarEsquerda.SetActive(true);
             botaoPulo.SetActive(true);
-            botaoAndar.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
         }
 
-        else if(RoboController.levantar && RoboController.andar)
+        else if(RoboController.pular && RoboController.andarDireita && RoboController.andarEsquerda)
+        {
+            botaoAndarEsquerda.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+            botaoPulo.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.andarDireita && RoboController.andarEsquerda)
+        {
+            botaoAndarEsquerda.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.pular && RoboController.andarDireita)
+        {
+            botaoPulo.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+        }
+
+        else if(RoboController.pular && RoboController.andarEsquerda)
+        {
+            botaoPulo.SetActive(true);
+            botaoAndarEsquerda.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.andarDireita)
         {
             botaoLevantarBraco.SetActive(true);
-            botaoAndar.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.andarEsquerda)
+        {
+            botaoAndarEsquerda.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.andarDireita)
+        {
+            botaoAndarDireita.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
+        }
+
+        else if(RoboController.andarDireita && RoboController.andarEsquerda)
+        {
+            botaoAndarEsquerda.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+        }
+
+        else if(RoboController.levantar && RoboController.pular)
+        {
+            botaoPulo.SetActive(true);
+            botaoLevantarBraco.SetActive(true);
         }
 
         else if(RoboController.levantar)
@@ -73,9 +127,14 @@ public class Player : MonoBehaviour
             botaoPulo.SetActive(true);
         }
 
-        else if(RoboController.andar)
+        else if(RoboController.andarDireita)
         {
-            botaoAndar.SetActive(true);
+            botaoAndarDireita.SetActive(true);
+        }
+
+        else if(RoboController.andarEsquerda)
+        {
+            botaoAndarEsquerda.SetActive(true);
         }
         
     }

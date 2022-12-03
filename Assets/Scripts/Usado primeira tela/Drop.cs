@@ -11,7 +11,8 @@ public class Drop : MonoBehaviour, IDropHandler
     public GameObject codPe;
     public GameObject codPular;
     public GameObject codLevantar;
-    public GameObject codAndar;
+    public GameObject codAndarEsquerda;
+    public GameObject codAndarDireita;
     public GameObject parente;
     public string componentName;
     
@@ -45,11 +46,18 @@ public class Drop : MonoBehaviour, IDropHandler
                     codPe.transform.position = new Vector3(x, y, z);
                 }
                 break;
-            case "andar":
-                codAndar.transform.parent = parente.transform;
+            case "andarDireita":
+                codAndarDireita.transform.parent = parente.transform;
                 if(eventData.pointerDrag != null)
                 {
-                    codAndar.transform.position = new Vector3(x, y, z);
+                    codAndarDireita.transform.position = new Vector3(x, y, z);
+                }
+                break;
+            case "andarEsquerda":
+                codAndarEsquerda.transform.parent = parente.transform;
+                if(eventData.pointerDrag != null)
+                {
+                    codAndarEsquerda.transform.position = new Vector3(x, y, z);
                 }
                 break;
             case "levantar":

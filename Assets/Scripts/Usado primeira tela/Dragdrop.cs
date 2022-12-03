@@ -10,14 +10,6 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
-    public GameObject caixaCod1;
-    public GameObject caixaCod2;
-    public GameObject caixaCod3;
-    public GameObject caixaCod4;
-    public GameObject caixaCod5;
-    public GameObject caixaCod6;
-    public GameObject caixaCod7;
-
     public int valor;
     public string componentName;
     public GameObject parente;

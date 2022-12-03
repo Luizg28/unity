@@ -42,8 +42,11 @@ public class DefinirParte : MonoBehaviour
                 RoboController.pe = true;
                 peOriginal.sprite = novoPe;
                 break;
-            case "andar":
-                RoboController.andar = true;
+            case "andarDireita":
+                RoboController.andarDireita = true;
+                break;
+            case "andarEsquerda":
+                RoboController.andarEsquerda = true;
                 break;
             case "levantar":
                 RoboController.levantar = true;
