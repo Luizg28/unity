@@ -8,6 +8,8 @@ public class PlayerSprite : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    public GameObject player;
+
     public Sprite cabecaCorpo;
     public Sprite cabecaPe;
     public Sprite peCorpo;
@@ -19,7 +21,22 @@ public class PlayerSprite : MonoBehaviour
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
-        if (RoboController.cabeca)
+        if (RoboController.cabeca && RoboController.corpo)
+        {
+            spriteRenderer.sprite = cabecaCorpo;
+        }
+
+        else if (RoboController.cabeca && RoboController.pe)
+        {
+            spriteRenderer.sprite = cabecaPe;
+        }
+
+        else if (RoboController.corpo && RoboController.pe)
+        {
+            spriteRenderer.sprite = peCorpo;
+        }
+
+        else if (RoboController.cabeca)
         {
             spriteRenderer.sprite = cabeca;
         }
@@ -34,19 +51,9 @@ public class PlayerSprite : MonoBehaviour
             spriteRenderer.sprite = pe;
         }
 
-        else if (RoboController.cabeca && RoboController.corpo)
+        else
         {
-            spriteRenderer.sprite = cabecaCorpo;
-        }
-
-        else if (RoboController.cabeca && RoboController.pe)
-        {
-            spriteRenderer.sprite = cabecaPe;
-        }
-
-        else if (RoboController.corpo && RoboController.pe)
-        {
-            spriteRenderer.sprite = peCorpo;
+            player.SetActive(false);
         }
     }
 

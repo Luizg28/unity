@@ -209,8 +209,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!222 &96764778
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10f077eaa49ab6d4ca74b9273d598bc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc15cda036c88124ca45728e089f9c7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1195,7 +1195,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 951785045}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f61d970ca7f8b7747ad4e30699e9e69c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e602939295ab941856e1388469514b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf1b4d34eadf0ae41b47b4351a723933, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 904c33e78a69a5147a80f2f4c42cf5de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1536,8 +1536,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!1 &844796970
@@ -1634,8 +1634,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!1 &883265885
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e705a703a2658004694fa88f0050db6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 043d9525c0732b6408b9e8fcbefa2b71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2142,8 +2142,8 @@ RectTransform:
   - {fileID: 1559347068}
   - {fileID: 770070120}
   - {fileID: 454845212}
-  - {fileID: 576394320}
   - {fileID: 1640762262}
+  - {fileID: 576394320}
   - {fileID: 171168216}
   - {fileID: 1101637391}
   - {fileID: 105681632}
@@ -2547,8 +2547,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!222 &1110548529
@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3df897f2ddafcf6459d5a8ceeb6daa97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 913991003faac2e4f92a642a9470f3a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b6129b1d45241e48b1c2524bf19d415, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29504e4e67331ed4ca211922c3ea6dba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3408,8 +3408,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!1 &1640762261
@@ -3445,7 +3445,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 951785045}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3484,7 +3484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01f6a1ebca5deb3459ae934dc0f83588, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd85daf5ff6978044ae27fddf32da2ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3604,8 +3604,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!222 &1648328090
@@ -3779,8 +3779,8 @@ MonoBehaviour:
   codPe: {fileID: 1559347067}
   codPular: {fileID: 770070119}
   codLevantar: {fileID: 454845211}
-  codAndarEsquerda: {fileID: 0}
-  codAndarDireita: {fileID: 0}
+  codAndarEsquerda: {fileID: 1640762261}
+  codAndarDireita: {fileID: 576394319}
   parente: {fileID: 220269409}
   componentName: 
 --- !u!222 &2035992453
