@@ -9,11 +9,18 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    
+    public float x;
+    public float y;
+    public float z;
 
-    public int valor;
     public string componentName;
     public GameObject parente;
 
+    private void Update()
+    {
+        
+    }
     private void Awake() 
     {
         rectTransform = GetComponent<RectTransform>();
@@ -29,13 +36,15 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
-        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        x = this.transform.position.x;
+        y = this.transform.position.y;
+        z = this.transform.position.z;
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -14,14 +14,69 @@ public class Drop : MonoBehaviour, IDropHandler
     public GameObject codAndarEsquerda;
     public GameObject codAndarDireita;
     public GameObject parente;
+
     public string componentName;
+
+    private float x;
+    private float y;
+    private float z;
     
+    private void Update()
+    {
+        switch (componentName)
+        {
+            case "cabeca":
+                if(codCabeca.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "corpo":
+                if(codCorpo.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "pe":
+                if(codPe.GetComponent<Dragdrop>().x!= x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "andarDireita":
+                if(codAndarDireita.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "andarEsquerda":
+                if(codAndarEsquerda.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "levantar":
+                if(codLevantar.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            case "pular":
+                if(codPular.GetComponent<Dragdrop>().x != x)
+                {
+                    componentName = "";
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
-        
-        float x = this.transform.position.x;
-        float y = this.transform.position.y;
-        float z = this.transform.position.z;
+        x = this.transform.position.x;
+        y = this.transform.position.y;
+        z = this.transform.position.z;
         componentName = eventData.pointerDrag.GetComponent<Dragdrop>().componentName;
         switch (componentName)
         {
