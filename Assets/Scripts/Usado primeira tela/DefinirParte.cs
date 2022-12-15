@@ -21,7 +21,10 @@ public class DefinirParte : MonoBehaviour
     public GameObject caixaCod6;
     public GameObject caixaCod7;
 
+    public String tipoRobo;
+
     private void verificaComponente(string componentName){
+        Debug.Log("nome do componente" + componentName);
         switch(componentName){
             case "cabeca":
                 RoboController.cabeca = true;
@@ -49,6 +52,29 @@ public class DefinirParte : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void tipoDoRobo()
+    {
+        switch(tipoRobo){
+            case "Irritado":
+                RoboController.irritado = true;
+                RoboController.feliz = false;
+                RoboController.indiferente = false;
+            break;
+            case "Feliz":
+                RoboController.irritado = false;
+                RoboController.feliz = true;
+                RoboController.indiferente = false;
+            break;
+            case "Indiferente":
+                RoboController.irritado = false;
+                RoboController.feliz = false;
+                RoboController.indiferente = true;
+            break;
+            default:
+            break;
         }
     }
 

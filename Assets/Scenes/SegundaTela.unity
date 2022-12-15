@@ -3087,11 +3087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5657712056168735224, guid: 72b0bfca9285b5d4c98c9e5ca261cefa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.99772763
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: 5657712056168735224, guid: 72b0bfca9285b5d4c98c9e5ca261cefa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.97070515
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: 5657712056168735224, guid: 72b0bfca9285b5d4c98c9e5ca261cefa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4380,36 +4380,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -11, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 17
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -10, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 19
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 17
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -9, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 18
-      m_TileSpriteIndex: 9
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 17
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -6, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -4615,6 +4585,36 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 5
       m_TileSpriteIndex: 23
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 17
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -11, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 17
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -10, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 19
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 17
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -9, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 18
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 17
       m_TileObjectToInstantiateIndex: 65535
@@ -5869,6 +5869,7 @@ GameObject:
   - component: {fileID: 1394733524}
   - component: {fileID: 1394733530}
   - component: {fileID: 1394733531}
+  - component: {fileID: 1394733532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6006,11 +6007,36 @@ MonoBehaviour:
   botaoAndarDireita: {fileID: 1217337929}
   botaoAndarEsquerda: {fileID: 824394247}
   botaoLevantarBraco: {fileID: 813038824}
+  avisoPular: {fileID: 0}
+  avisoAndarDireita: {fileID: 0}
+  avisoAndarEsquerda: {fileID: 0}
+  avisoLevantarBraco: {fileID: 0}
   spriteRenderer: {fileID: 1394733526}
-  levantaBraco: {fileID: 21300000, guid: 9478a46708b9acd4299158e428c921a0, type: 3}
-  abaixaBraco: {fileID: 21300000, guid: 1bc7722138348444785e5ce774ce4cfa, type: 3}
+  inteirolevantabraco1: {fileID: 21300000, guid: 9478a46708b9acd4299158e428c921a0, type: 3}
+  inteirolevantabraco2: {fileID: 21300000, guid: 830971feaa9bf4b43b93884ac342df11, type: 3}
+  inteirolevantabraco3: {fileID: 21300000, guid: af1c88757581b434e871477fa099bcf6, type: 3}
+  cabecacorpolevantabraco1: {fileID: 21300000, guid: a6865fda4410dbe478dce01fe3beffa4, type: 3}
+  cabecacorpolevantabraco2: {fileID: 21300000, guid: 64b3dc242f86e414bac4ea66a9859768, type: 3}
+  cabecacorpolevantabraco3: {fileID: 21300000, guid: 2e9b9cf78e426ad4ba8c3396dffca100, type: 3}
+  corpopelevantabraco1: {fileID: 21300000, guid: 078c341806d29aa4d966d0d4c4be5b5a, type: 3}
+  corpopelevantabraco2: {fileID: 21300000, guid: 379cee81f561c824da6f1df982f25f39, type: 3}
+  corpopelevantabraco3: {fileID: 21300000, guid: e0782bc27aae28a4ab71480457343a38, type: 3}
+  corpolevantabraco1: {fileID: 21300000, guid: 79b5a665876bd6c4f8ba2468b7b20137, type: 3}
+  corpolevantabraco2: {fileID: 21300000, guid: 01b548a7a495cf340b4720d18be86400, type: 3}
+  corpolevantabraco3: {fileID: 21300000, guid: 2ff1731377046d44bbd56d87d7cea3e7, type: 3}
+  inteiro1: {fileID: 21300000, guid: 1bc7722138348444785e5ce774ce4cfa, type: 3}
+  inteiro2: {fileID: 21300000, guid: 73bdc1f6802f7e046b854d0f210cf3a3, type: 3}
+  inteiro3: {fileID: 21300000, guid: 00348e76770490f46b21750c61110933, type: 3}
+  cabecacorpo1: {fileID: 21300000, guid: 20623620267dd1c458b6cfc9493bbb0b, type: 3}
+  cabecacorpo2: {fileID: 21300000, guid: 5737e723a738f4a49bb38f751d36b472, type: 3}
+  cabecacorpo3: {fileID: 21300000, guid: 1102760f6236d014194da8139ffbb892, type: 3}
+  corpope1: {fileID: 21300000, guid: 8a9f99655f4c01f4c8047685aac0048f, type: 3}
+  corpope2: {fileID: 21300000, guid: d8cc66ae7e3fda441a747c3df21ca3d8, type: 3}
+  corpope3: {fileID: 21300000, guid: fefc740d80a017f498433a1ecef068fb, type: 3}
+  corpo1: {fileID: 21300000, guid: ca4bbc2a9c89c29409284970d856397e, type: 3}
+  corpo2: {fileID: 21300000, guid: 3fdcf9d57f3a5ea45a82769a1a820b38, type: 3}
+  corpo3: {fileID: 21300000, guid: bf8c2f252971fd14dac51a05dcdc6648, type: 3}
   isJumping: 0
-  doubleJump: 0
   jumpForce: 1
   speed: 5
 --- !u!114 &1394733531
@@ -6027,16 +6053,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1394733526}
   player: {fileID: 1394733523}
-  avisoPular: {fileID: 1049206930}
-  avisoAndarDireita: {fileID: 1900697561}
-  avisoAndarEsquerda: {fileID: 518192233}
-  avisoLevantarBraco: {fileID: 1280249937}
-  cabecaCorpo: {fileID: 21300000, guid: 20623620267dd1c458b6cfc9493bbb0b, type: 3}
-  cabecaPe: {fileID: 21300000, guid: 07ebb2292caa55b4fbe87323a3acd169, type: 3}
-  peCorpo: {fileID: 21300000, guid: 8a9f99655f4c01f4c8047685aac0048f, type: 3}
-  cabeca: {fileID: 21300000, guid: 12e4deb1996db5244ac81540ec12b089, type: 3}
-  corpo: {fileID: 21300000, guid: ca4bbc2a9c89c29409284970d856397e, type: 3}
+  cabecaCorpo1: {fileID: 21300000, guid: 20623620267dd1c458b6cfc9493bbb0b, type: 3}
+  cabecaPe1: {fileID: 21300000, guid: 07ebb2292caa55b4fbe87323a3acd169, type: 3}
+  peCorpo1: {fileID: 21300000, guid: 8a9f99655f4c01f4c8047685aac0048f, type: 3}
+  cabeca1: {fileID: 21300000, guid: 12e4deb1996db5244ac81540ec12b089, type: 3}
+  corpo1: {fileID: 21300000, guid: ca4bbc2a9c89c29409284970d856397e, type: 3}
+  inteiro2: {fileID: 21300000, guid: 73bdc1f6802f7e046b854d0f210cf3a3, type: 3}
+  cabecaCorpo2: {fileID: 21300000, guid: 5737e723a738f4a49bb38f751d36b472, type: 3}
+  cabecaPe2: {fileID: 21300000, guid: 2869fd092f816d04ea2c3ea91154d711, type: 3}
+  peCorpo2: {fileID: 21300000, guid: d8cc66ae7e3fda441a747c3df21ca3d8, type: 3}
+  cabeca2: {fileID: 21300000, guid: 38537f8ac47f85147b692f220c9c3cf8, type: 3}
+  corpo2: {fileID: 21300000, guid: 3fdcf9d57f3a5ea45a82769a1a820b38, type: 3}
+  inteiro3: {fileID: 21300000, guid: 00348e76770490f46b21750c61110933, type: 3}
+  cabecaCorpo3: {fileID: 21300000, guid: 1102760f6236d014194da8139ffbb892, type: 3}
+  cabecaPe3: {fileID: 21300000, guid: c42fbd43de949f244bb4718aecfa176f, type: 3}
+  peCorpo3: {fileID: 21300000, guid: fefc740d80a017f498433a1ecef068fb, type: 3}
+  cabeca3: {fileID: 21300000, guid: d7a66e22099b6e94e8f5c76709390d7d, type: 3}
+  corpo3: {fileID: 21300000, guid: bf8c2f252971fd14dac51a05dcdc6648, type: 3}
   pe: {fileID: 21300000, guid: 0e090b2d00302f448af31aa528cad103, type: 3}
+--- !u!114 &1394733532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394733523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7355499c193fa924ba5de2753b7eef9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  JumpForce: 10
+  isJumping: 0
 --- !u!4 &1478431186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7520002151716482904, guid: 0a8f979a0d47d1e4c8fa2fb2db0f8ded, type: 3}
@@ -6940,7 +6989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fun\xE7\xE3o andar requer atributo pernas"
+  m_text: "Fun\xE7\xE3o levantar bra\xE7o requer atributo corpo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

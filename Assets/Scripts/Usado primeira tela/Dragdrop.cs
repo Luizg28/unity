@@ -17,9 +17,11 @@ public class Dragdrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public string componentName;
     public GameObject parente;
 
-    private void Update()
+    private void Start()
     {
-        
+        x = this.transform.position.x;
+        y = this.transform.position.y;
+        z = this.transform.position.z;
     }
     private void Awake() 
     {

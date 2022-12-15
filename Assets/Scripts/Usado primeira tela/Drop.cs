@@ -26,43 +26,43 @@ public class Drop : MonoBehaviour, IDropHandler
         switch (componentName)
         {
             case "cabeca":
-                if(codCabeca.GetComponent<Dragdrop>().x != x)
+                if(codCabeca.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
                 break;
             case "corpo":
-                if(codCorpo.GetComponent<Dragdrop>().x != x)
+                if(codCorpo.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
                 break;
             case "pe":
-                if(codPe.GetComponent<Dragdrop>().x!= x)
+                if(codPe.GetComponent<Dragdrop>().y!= y)
                 {
                     componentName = "";
                 }
                 break;
             case "andarDireita":
-                if(codAndarDireita.GetComponent<Dragdrop>().x != x)
+                if(codAndarDireita.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
                 break;
             case "andarEsquerda":
-                if(codAndarEsquerda.GetComponent<Dragdrop>().x != x)
+                if(codAndarEsquerda.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
                 break;
             case "levantar":
-                if(codLevantar.GetComponent<Dragdrop>().x != x)
+                if(codLevantar.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
                 break;
             case "pular":
-                if(codPular.GetComponent<Dragdrop>().x != x)
+                if(codPular.GetComponent<Dragdrop>().y != y)
                 {
                     componentName = "";
                 }
